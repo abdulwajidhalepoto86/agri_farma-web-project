@@ -1,0 +1,23 @@
+{# templates/macros.html #}
+{# Shared Jinja macros for AgriFarma templates #}
+
+{% macro recent_posts(posts) %}
+  {# Display a list of recent forum/blog posts #}
+  {% if posts and posts|length > 0 %}
+    <ul class="list-unstyled">
+      {% for post in posts %}
+        <li class="mb-2">
+          <a href="{{ url_for('blog.view_post', post_id=post.id) }}" class="text-decoration-none">
+            <strong>{{ post.title }}</strong>
+          </a>
+          <br>
+          <small class="text-muted">
+            {{ post.created_at.strftime('%b %d, %Y') if post.created_at else '' }}
+          </small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">No recent posts yet.</p>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between">
+  <h3>Knowledge Base</h3>
+  <a href="{{ url_for('blog.create_blog') }}" class="btn btn-success">Create Blog</a>
+</div>
+<hr>
+<div class="row">
+  {% for p in posts %}
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.title }}</h5>
+          <p class="card-text">{{ p.body[:180] }}...</p>
+          <a href="{{ url_for('forum.post_view', post_id=p.id) }}" class="btn btn-sm btn-outline-success">Read</a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="alert alert-secondary">No blog posts yet.</div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <h2 class="text-success">Welcome to AgriFarma</h2>
+    <p>Your farmers' digital hub — forum, knowledge base, consultants, and marketplace.</p>
+    <hr>
+    <h4>Quick links</h4>
+    <ul>
+      <li><a href="{{ url_for('forum.forum_index') }}">Forum</a></li>
+      <li><a href="{{ url_for('blog.blog_index') }}">Knowledge Base</a></li>
+      <li><a href="{{ url_for('shop.marketplace') }}">Marketplace</a></li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h5>Latest posts</h5>
+    {% from 'macros.html' import recent_posts %}
+    <!-- Could make macro or simple query in templates — for now user will navigate -->
+    <p>Use Forum and Knowledge sections to view latest content.</p>
+  </div>
+</div>
+{% endblock %}

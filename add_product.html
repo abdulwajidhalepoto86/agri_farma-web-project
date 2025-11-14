@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{% if form.name.data %}Edit Product{% else %}Add Product{% endif %}</h3>
+
+<form method="post" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  
+  <div class="mb-3">
+    {{ form.name.label }}
+    {{ form.name(class='form-control') }}
+  </div>
+  
+  <div class="mb-3">
+    {{ form.description.label }}
+    {{ form.description(class='form-control', rows=4) }}
+  </div>
+  
+  <div class="mb-3">
+    {{ form.price.label }}
+    {{ form.price(class='form-control') }}
+  </div>
+  
+  <div class="mb-3">
+    {{ form.image.label }}
+    {{ form.image(class='form-control') }}
+  </div>
+  
+  <div class="mb-3">
+    {{ form.submit(class='btn btn-success') }}
+  </div>
+</form>
+{% endblock %}

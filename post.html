@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>{{ post.title }}</h3>
+<p class="text-muted">by {{ post.author.name if post.author else 'Anonymous' }} on {{ post.created_at.strftime('%Y-%m-%d') }}</p>
+{% if post.image %}
+  <img src="{{ url_for('static', filename='uploads/' + post.image) }}" class="img-fluid mb-3">
+{% endif %}
+<p>{{ post.body }}</p>
+
+<hr>
+<h5>Replies</h5>
+{% for c in post.comments %}
+  <div class="mb-2 border-bottom pb-2"><strong>{{ c.author_user.name if c.author_user else 'Guest' }}:</strong> {{ c.body }}</div>
+{% endfor %}
+
+<hr>
+<h5>Add Reply</h5>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">{{ form.body(class='form-control', rows=3) }}</div>
+  <div class="mb-3">{{ form.submit(class='btn btn-primary') }}</div>
+</form>
+{% endblock %}

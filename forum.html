@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center">
+  <h3>Forum</h3>
+  <a href="{{ url_for('forum.create_post') }}" class="btn btn-success">Create Post</a>
+</div>
+<hr>
+<div class="list-group">
+  {% for p in posts %}
+    <a href="{{ url_for('forum.post_view', post_id=p.id) }}" class="list-group-item list-group-item-action">
+      <strong>{{ p.title }}</strong> <small class="text-muted">by {{ p.author.name if p.author else 'Anonymous' }}</small>
+    </a>
+  {% else %}
+    <div class="alert alert-secondary">No posts yet.</div>
+  {% endfor %}
+</div>
+{% endblock %}

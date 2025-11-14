@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Category: {{ category.name }}</h3>
+<div class="list-group">
+  {% for p in posts %}
+    <a href="{{ url_for('forum.post_view', post_id=p.id) }}" class="list-group-item list-group-item-action">
+      {{ p.title }}
+    </a>
+  {% else %}
+    <div class="alert alert-secondary">No posts in this category.</div>
+  {% endfor %}
+</div>
+{% endblock %}

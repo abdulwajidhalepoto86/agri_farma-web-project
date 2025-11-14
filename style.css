@@ -1,0 +1,232 @@
+/* ======================================================
+   AGRIFARMA PREMIUM 3D NEUMORPHIC THEME
+   Author: You
+   File: style.css
+   ====================================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ------------------------------------------------------
+   BASE STYLES
+------------------------------------------------------ */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f6f4;
+    color: #333;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+    color: #228b22;
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: #228b22;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------
+   NAVBAR
+------------------------------------------------------ */
+.navbar {
+    background: linear-gradient(90deg, #228b22, #32cd32);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: #e0ffe0 !important;
+}
+
+/* ------------------------------------------------------
+   BUTTONS - 3D Neumorphic
+------------------------------------------------------ */
+button, .btn {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(145deg, #32cd32, #228b22);
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.25),
+                -6px -6px 12px rgba(255,255,255,0.15);
+    transition: all 0.3s ease;
+}
+button:hover, .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 16px rgba(0,0,0,0.3),
+                -8px -8px 16px rgba(255,255,255,0.2);
+}
+button:active, .btn:active {
+    transform: translateY(2px);
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.2),
+                inset -4px -4px 8px rgba(255,255,255,0.15);
+}
+
+/* ------------------------------------------------------
+   CARDS & FORMS
+------------------------------------------------------ */
+.card, .product-card, form {
+    background: linear-gradient(145deg, #ffffff, #e0ffe0);
+    border-radius: 18px;
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.15),
+                -8px -8px 20px rgba(255,255,255,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover, .product-card:hover, form:hover {
+    transform: translateY(-6px);
+    box-shadow: 12px 12px 24px rgba(0,0,0,0.25),
+                -12px -12px 24px rgba(255,255,255,0.3);
+}
+.card img, .img-fluid {
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* ------------------------------------------------------
+   FORM CONTROLS - Neumorphic Inputs
+------------------------------------------------------ */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    background: linear-gradient(145deg, #f2f6f4, #e0ffe0);
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.1),
+                inset -4px -4px 8px rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
+}
+.form-control:focus, .form-select:focus {
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.15),
+                inset -2px -2px 6px rgba(255,255,255,0.6),
+                0 0 8px rgba(50,205,50,0.4);
+    outline: none;
+}
+
+/* ------------------------------------------------------
+   BADGES
+------------------------------------------------------ */
+.badge-category {
+    background: linear-gradient(145deg, #32cd32, #228b22);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.15),
+                -4px -4px 10px rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+.badge-category:hover {
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------
+   ALERTS / FLASH MESSAGES
+------------------------------------------------------ */
+.alert {
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.15),
+                -4px -4px 12px rgba(255,255,255,0.2);
+}
+
+/* ------------------------------------------------------
+   HERO SECTION
+------------------------------------------------------ */
+.hero {
+    background: linear-gradient(135deg, rgba(50,205,50,0.8), rgba(34,139,34,0.8)),
+                url('https://images.unsplash.com/photo-1598965402081-65f48b2e0c9d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: white;
+    border-radius: 20px;
+    padding: 80px 30px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* ------------------------------------------------------
+   ANIMATIONS
+------------------------------------------------------ */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------------
+   FOOTER
+------------------------------------------------------ */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+footer, .site-footer {
+    background: linear-gradient(90deg, #8b6a22, #32cd32);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+    font-size: 0.95rem;
+}
+
+.site-footer a {
+    color: #e0ffe0;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------ */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}

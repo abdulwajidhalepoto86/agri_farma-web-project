@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Admin Dashboard</h3>
+<p>Welcome, {{ current_user.name }}! You have full administrative access.</p>
+
+<ul>
+  <li>Total Users: {{ users }}</li>
+  <li>Total Posts: {{ posts }}</li>
+  <li>Total Products: {{ products }}</li>
+  <li>Manage site content and user accounts</li>
+</ul>
+{% endblock %}

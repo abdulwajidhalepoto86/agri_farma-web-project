@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>User Dashboard</h3>
+<p>Welcome, {{ current_user.name }}! This is your personal dashboard.</p>
+
+<ul>
+  <li>View your posts</li>
+  <li>Check marketplace products</li>
+  <li>Interact with the community forum</li>
+</ul>
+{% endblock %}
